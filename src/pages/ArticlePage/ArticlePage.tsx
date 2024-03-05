@@ -4,7 +4,7 @@ const ArticlePage = () => {
     <>
       <main className="container">
   <section className="banner_article">
-    <img src="/public/banner_article.png" alt="" />
+    <img src="/banner_article.png" alt="" />
   </section>
   <div className="article">
     <section className="article_content">
