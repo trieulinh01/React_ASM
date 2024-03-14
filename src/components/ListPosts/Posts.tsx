@@ -1,58 +1,31 @@
+import { Link, useParams } from "react-router-dom";
+import { useContext } from "react";
+import { IProduct } from "../../interfaces/Product";
+import { ProductContext } from "../../contexts/ProductContextProvider";
 
 const Posts = () => {
-  return (
-    <>
-       <div className="posts_main">
-          <article>
-            <img src="/post1.png" alt="" />
-            <h4 className="posts_heading_title">long established</h4>
-            <p className="posts_description">
-              It is a long established fact that a reader will be distracted by
-              the readable content of a page when looking at its layout. The point
-              of using Lorem Ipsum is that....
-            </p>
-            <div className="posts_heading_bottom">
-              <p>May 20th 2020</p>
-              <a className="read_more" href="">
-                Read more
-              </a>
-            </div>
-          </article>
-          <article>
-            <img src="/post1.png" alt="" />
-            <h4 className="posts_heading_title">long established</h4>
-            <p className="posts_description">
-              It is a long established fact that a reader will be distracted by
-              the readable content of a page when looking at its layout. The point
-              of using Lorem Ipsum is that....
-            </p>
-            <div className="posts_heading_bottom">
-              <p>May 20th 2020</p>
-              <a className="read_more" href="">
-                Read more
-              </a>
-            </div>
-          </article>
-          <article>
-            <div className="article_img">
-              <img src="/post1.png" alt="" />
-            </div>
-            <h4 className="posts_heading_title">long established</h4>
-            <p className="posts_description">
-              It is a long established fact that a reader will be distracted by
-              the readable content of a page when looking at its layout. The point
-              of using Lorem Ipsum is that....
-            </p>
-            <div className="posts_heading_bottom">
-              <p>May 20th 2020</p>
-              <a className="read_more" href="">
-                Read more
-              </a>
-            </div>
-          </article>
-        </div>
-    </>
-  )
-}
+  const { products } = useContext(ProductContext);
+  console.log(products);
 
-export default Posts
+  return (
+    <div className="posts__main">
+      {products.map((item: IProduct, index: number) => (
+        <article key={index} className="posts__item">
+          <Link to={`/products/${item.id}`}>
+            <img src={item.img} alt="product image" />
+          </Link>
+          <h4 className="posts__heading-title">{item.title}</h4>
+          <p className="posts__description">{item.desc}</p>
+          <div className="posts__heading-bottom">
+            <p>May 20th 2020</p>
+            <Link to={`article`} className="posts__read-more">
+              Read more
+            </Link>
+          </div>
+        </article>
+      ))}
+    </div>
+  );
+};
+
+export default Posts;

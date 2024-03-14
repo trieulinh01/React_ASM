@@ -1,0 +1,16 @@
+{
+  "products": [
+    {
+      "id": "9",
+      "title": "Product 9 update 3",
+      "img": "https://picsum.photos/id/237/536/354",
+      "desc": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that...."
+    },
+    {
+      "id": "10",
+      "title": "Product 10",
+      "img": "https://picsum.photos/536/354",
+      "desc": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that...."
+    }
+  ]
+}
